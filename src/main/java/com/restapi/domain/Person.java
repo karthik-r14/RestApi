@@ -1,21 +1,24 @@
 package com.restapi.domain;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
 public class Person {
-    private int id;
+    @Id @GeneratedValue
+    private Long id;
     private int age;
     private String name;
 
-    public Person(int id, int age, String name) {
-        this.id = id;
-        this.age = age;
-        this.name = name;
+    public Person() {
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -33,5 +36,14 @@ public class Person {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "id=" + id +
+                ", age=" + age +
+                ", name='" + name + '\'' +
+                '}';
     }
 }

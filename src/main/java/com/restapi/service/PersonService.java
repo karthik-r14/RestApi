@@ -9,7 +9,7 @@ import java.util.List;
 
 @Service
 public class PersonService {
-    PersonRepository repository;
+    private PersonRepository repository;
 
     @Autowired
     public PersonService(PersonRepository repository) {
@@ -17,11 +17,11 @@ public class PersonService {
     }
 
     public List<Person> findAllPersons() {
-        return repository.findAllPerson();
+        return (List<Person>) repository.findAll();
     }
 
     public Person findPerson(long id) {
-        return repository.findPerson(id);
+        return repository.findOne(id);
     }
 
     public void createPerson(Person person) {
@@ -29,7 +29,6 @@ public class PersonService {
     }
 
     public void updatePerson(long id, Person person) {
-
     }
 
     public void deletePerson(long id) {

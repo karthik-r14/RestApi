@@ -10,7 +10,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/person")
 public class PersonController {
-    PersonService personService;
+    private PersonService personService;
 
     @Autowired
     public PersonController(PersonService personService) {
