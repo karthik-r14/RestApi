@@ -11,7 +11,7 @@ public class Person {
     private int age;
     private String name;
 
-    public Person() {
+    public Person(int age, String name) {
     }
 
     public Long getId() {
