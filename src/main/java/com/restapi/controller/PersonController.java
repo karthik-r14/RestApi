@@ -1,7 +1,6 @@
 package com.restapi.controller;
 
 import com.restapi.domain.Person;
-import com.restapi.domain.PersonRequest;
 import com.restapi.service.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -29,8 +28,7 @@ public class PersonController {
     }
 
     @RequestMapping(value = "/", method = RequestMethod.POST)
-    public void createPerson(@RequestBody PersonRequest request) {
-        Person person = new Person(request.getAge(), request.getName());
+    public void createPerson(@RequestBody Person person) {
         personService.createPerson(person);
     }
 
