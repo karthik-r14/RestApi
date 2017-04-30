@@ -24,11 +24,12 @@ public class PersonService {
         return repository.findOne(id);
     }
 
-    public void createPerson(Person person) {
-        repository.save(person);
+    public Person createPerson(Person person) {
+        return repository.save(person);
     }
 
     public void updatePerson(long id, Person person) {
+        repository.save(person);
     }
 
     public void deletePerson(long id) {
