@@ -28,8 +28,8 @@ public class PersonController {
     }
 
     @RequestMapping(value = "/", method = RequestMethod.POST)
-    public void createPerson(@RequestBody Person person) {
-        personService.createPerson(person);
+    public Person createPerson(@RequestBody Person person) {
+       return personService.createPerson(person);
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.PUT)
